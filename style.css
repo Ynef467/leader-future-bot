@@ -2324,6 +2324,10 @@ li {
   }
 }
 
+#biohacking .why__wrap {
+  padding-bottom: 16rem;
+}
+
 @media (max-width: 1279px) {
   .why {
     margin-top: 4.1rem;
@@ -2810,6 +2814,33 @@ li {
   }
 }
 
+#biohacking .plan__h2 {
+  padding-top: 14.3rem;
+}
+
+#biohacking .plan__days {
+  margin-top: 6.4rem;
+  padding-bottom: 22.5rem;
+}
+
+#biohacking .plan__day-download {
+  gap: 2.4rem;
+  background: #EBEAFF;
+}
+
+#biohacking .plan__day-button {
+  color: var(--color-light);
+  background: #736CFF;
+}
+
+#biohacking .plan__day-warning {
+  background: #FFEAF3;
+}
+
+#biohacking .plan__day-warning .plan__day-text {
+  color: #D55365;
+}
+
 @media (max-width: 1279px) {
   .plan {
     width: var(--width-global);
@@ -2950,6 +2981,37 @@ li {
       }
     }
   }
+}
+
+.ai-cards {
+  position: relative;
+  height: 61.4rem;
+}
+
+.ai-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  position: absolute;
+  top: 6rem;
+  left: 12rem;
+  transform: rotate(-1.5deg);
+  padding: 4rem;
+  width: 57rem;
+  border-radius: 1.6rem;
+  background: var(--color-light);
+
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.ai-card-2 {
+  top: 14.5rem;
+  left: auto;
+  right: 12rem;
+  transform: rotate(1.5deg);
+  width: 58rem;
 }
 
 /* Что важно помнить */
