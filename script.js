@@ -176,6 +176,59 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('.checklist__checkbox');
+
+  if (!checkboxes.length) {
+    console.error('[LPC Warning]: Чекбоксы не найдены');
+    return;
+  }
+
+  const STORAGE_KEY = 'checklist-state';
+  const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+  checkboxes.forEach(checkbox => {
+    const id = checkbox.dataset.checkboxId;
+
+    if (!id) {
+      console.error('[LPC Warning]: Нет data-checkbox-id');
+      return;
+    }
+
+    // восстановление состояния
+    const isChecked = Boolean(savedState[id]);
+
+    checkbox.classList.toggle('checked', isChecked);
+    checkbox.setAttribute('aria-checked', isChecked);
+
+    const toggleCheckbox = () => {
+      const newState = checkbox.getAttribute('aria-checked') !== 'true';
+
+      checkbox.classList.toggle('checked', newState);
+      checkbox.setAttribute('aria-checked', newState);
+
+      savedState[id] = newState;
+
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(savedState)
+      );
+    };
+
+    checkbox.addEventListener('click', toggleCheckbox);
+
+    // SPACE = toggle (checkbox behaviour)
+    checkbox.addEventListener('keydown', e => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        toggleCheckbox();
+      }
+    });
+
+  });
+
+});
+
+window.addEventListener('DOMContentLoaded', () => {
   const screens = document.querySelectorAll('.screen');
 
   if (!screens.length) {
