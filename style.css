@@ -2090,6 +2090,15 @@ li {
       padding-top: 0;
     }
 
+    .share__wrap.two-person {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+
+      .share__item {
+        gap: 3rem;
+      }
+    }
+
     .share__persona {
       img {
         width: 100%;
@@ -2126,7 +2135,7 @@ li {
     }
 
     .share__position {
-      font-size: 2.1.8rem;
+      font-size: 1.8rem;
       letter-spacing: -0.036rem;
     }
 
