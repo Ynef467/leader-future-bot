@@ -1868,7 +1868,7 @@ li {
     font-weight: 700;
     line-height: 90%;
     margin: 2.3rem auto 0;
-    width: 55.3rem;
+    max-width: 65.3rem;
     position: relative;
     z-index: 1;
   }
