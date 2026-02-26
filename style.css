@@ -2557,6 +2557,142 @@ li {
   }
 }
 
+@media (max-width: 1279px) {
+  .plan {
+    width: var(--width-global);
+    padding: 0 2rem;
+
+    .plan__h2 {
+      padding-top: 0;
+      font-size: 3.87rem;
+    }
+
+    .plan__description {
+      padding: 2rem 0 4rem;
+      width: 100%;
+      font-size: 1.6rem;
+      letter-spacing: -0.032rem;
+    }
+
+    .plan__accordions {
+      padding: 0;
+      gap: 1rem;
+    }
+
+    .plan__accordion {
+      padding: 2rem;
+    }
+
+    .plan__accordion-title {
+      font-size: 3rem;
+      line-height: 110%;
+    }
+
+    .plan__accordion-text {
+      width: 100%;
+      font-size: 1.6rem;
+      letter-spacing: -0.032rem;
+    }
+
+    .plan__arrow {
+      top: 2.1rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+
+      clip-path: polygon(0.28rem 0, calc(100% - 0.14rem) 0.57rem, 100% 100%, 0 100%);
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .plan__cards {
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    .plan__card {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 1rem 1.5rem;
+      gap: 0.5rem;
+      font-size: 1.6rem;
+      letter-spacing: -0.032rem;
+    }
+
+    .plan__days {
+      margin-top: 6rem;
+      padding: 0 0 12rem;
+      gap: 1rem;
+    }
+
+    .plan__day {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .plan__day-about {
+      position: static;
+      top: auto;
+      gap: 1.4rem;
+      height: auto;
+
+      img {
+        height: 4.2rem;
+      }
+    }
+
+    .plan__day-h3 {
+      font-size: 3rem;
+      line-height: 110%;
+    }
+
+    .plan__day-content {
+      gap: 2rem;
+    }
+
+    .plan__day-text,
+    .plan__day-content li,
+    .plan__day-title {
+      font-size: 1.6rem;
+      letter-spacing: -0.032rem;
+    }
+
+    .plan__day-important-container {
+      gap: 0.5rem;
+    }
+
+    .plan__day-important {
+      padding: 1rem 1.5rem;
+      gap: 0.5rem;
+    }
+
+    .plan__day-important.big {
+      gap: 1.5rem;
+    }
+
+    .plan__day-download {
+      padding: 2rem;
+      gap: 1rem;
+
+      .plan__day-title {
+        width: 100%;
+      }
+
+      .plan__day-button {
+        height: 5.5rem;
+        font-size: 1.8rem;
+        letter-spacing: -0.036rem;
+      }
+    }
+  }
+}
+
 .result {
   background: linear-gradient(173deg, #726BFF 89.03%, #FFF 117.26%), #726BFF;
   height: 62.4rem;
@@ -2575,6 +2711,11 @@ li {
     font-weight: 700;
     transform: rotate(-5deg);
     align-self: stretch;
+  }
+
+  .result__plane {
+    width: 79rem;
+    height: 12.6rem;
   }
 
   .result__button {
@@ -2605,6 +2746,39 @@ li {
     img {
       width: 91.2rem;
       height: 20.1rem;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .result {
+    height: 33rem;
+
+    .result__title {
+      font-size: 3.87rem;
+    }
+
+    .result__plane {
+      margin-top: 1rem;
+      width: 32.6rem;
+      height: 5.2rem;
+    }
+
+    .result__button {
+      margin-top: 3rem;
+      width: 27.2rem;
+      height: 5.5rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.036rem;
+    }
+
+    .result__collect {
+      padding-top: 5rem;
+
+      img {
+        width: 32.6rem;
+        height: 5.2rem;
+      }
     }
   }
 }
