@@ -422,10 +422,6 @@ li {
     transition: transform 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease;
   }
 
-  @media (hover: hover) {
-    .hero__button:hover {}
-  }
-
   .hero__cloud,
   .hero__lightning,
   .hero__rays,
@@ -1117,8 +1113,6 @@ li {
       position: relative;
       left: -35rem;
     }
-
-    .task-map__title {}
 
     .task-map__lightning-left {
       top: 1.1rem;
