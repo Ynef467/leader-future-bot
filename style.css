@@ -71,6 +71,11 @@ html {
     margin-top: 9rem;
     max-width: 144rem;
   }
+
+  .share__wrap {
+    max-width: 144rem;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 1279px) {
@@ -1862,14 +1867,13 @@ li {
   }
 
   .first-screen__title {
-    margin-top: 2.3rem;
     color: var(--color-light);
     text-align: center;
     font-family: var(--font-accent);
     font-size: 13rem;
     font-weight: 700;
     line-height: 90%;
-    margin: 0 auto;
+    margin: 2.3rem auto 0;
     width: 55.3rem;
     position: relative;
     z-index: 1;
@@ -1979,8 +1983,13 @@ li {
     padding-top: 8.9rem;
     display: grid;
     align-items: center;
-    grid-template-columns: 55rem 1fr;
+    grid-template-columns: 55rem 60rem;
     gap: 5.6rem;
+    justify-content: center;
+  }
+
+  .share__wrap.big {
+    padding-top: 13.3rem;
   }
 
   .share__persona {
