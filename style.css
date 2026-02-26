@@ -1986,6 +1986,23 @@ li {
     padding-top: 13.3rem;
   }
 
+  .share__wrap.two-person {
+    grid-template-columns: 55rem 55rem;
+
+    .share__item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 3.2rem;
+    }
+
+    .share__position {
+      max-width: 50rem;
+    }
+
+  }
+
   .share__persona {
     width: 100%;
     height: auto;
