@@ -2742,6 +2742,8 @@ li {
 }
 
 .result {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(173deg, #726BFF 89.03%, #FFF 117.26%), #726BFF;
   height: 62.4rem;
 
