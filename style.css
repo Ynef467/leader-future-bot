@@ -2326,12 +2326,19 @@ li {
   background: var(--color-accent);
 
   .plan__h2 {
+    transform: translateY(-1rem);
     padding-top: 8.4rem;
+    margin: 0 auto;
+    max-width: 80rem;
     color: var(--color-light);
     text-align: center;
     font-family: var(--font-accent);
     font-size: 11.2rem;
     font-weight: 700;
+  }
+
+  .plan__h2:not(:first-child) {
+    padding-top: 14rem;
   }
 
   .plan__description {
@@ -2344,6 +2351,11 @@ li {
     font-weight: 500;
     line-height: 130%;
     letter-spacing: -0.064rem;
+  }
+
+  .plan__description:nth-child(n+3) {
+    padding-top: 0;
+    margin-top: -2rem;
   }
 
   .plan__accordions {
@@ -2403,6 +2415,7 @@ li {
   }
 
   .plan__accordion-title {
+    transform: translateY(-.3rem);
     font-family: var(--font-accent);
     font-size: 6rem;
     font-weight: 700;
@@ -2509,12 +2522,49 @@ li {
     font-weight: 500;
   }
 
+  .plan__tabs {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .plan__tab {
+    display: flex;
+    margin: 0 auto;
+    padding: .4rem;
+    height: 7.1rem;
+    width: 37.8rem;
+    border-radius: 1.6rem;
+    background-color: var(--color-background);
+  }
+
+  .plan__tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.2rem;
+    font-size: 2.4rem;
+    color: #736CFF;
+    cursor: pointer;
+    border: none;
+  }
+
+  .plan__tab-btn.active {
+    color: var(--color-light);
+    background-color: var(--color-accent);
+  }
+
   .plan__days {
     margin-top: 12rem;
     padding: 0 11.7rem 19.7rem;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+  }
+
+  .plan__tabs .plan__days {
+    margin-top: 4.8rem;
   }
 
   .plan__day {
@@ -2542,11 +2592,24 @@ li {
   }
 
   .plan__day-h3 {
+    transform: translateY(-.5rem);
     color: var(--font-accent);
     font-family: var(--font-accent);
     font-size: 6rem;
     font-weight: 700;
     line-height: 100%;
+  }
+
+  .plan__day-text-content .plan__day-title {
+    padding-bottom: 1.6rem;
+  }
+
+  .plan__day-text-content .plan__day-text:nth-child(n+3) {
+    padding-top: .9rem;
+  }
+
+  .plan__day__list {
+    padding-block: 1rem 0.2rem;
   }
 
   .plan__day-content {
@@ -2620,6 +2683,22 @@ li {
     letter-spacing: -0.048rem;
   }
 
+  .plan__day-button {
+    display: flex;
+    height: 7.2rem;
+    padding: 1.6rem 3.2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.2rem;
+    color: var(--color-light);
+    background: var(--color-accent);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.048rem;
+  }
+
   .plan__day-download {
     color: var(--color-light);
     display: flex;
@@ -2635,19 +2714,8 @@ li {
     }
 
     .plan__day-button {
-      display: flex;
-      height: 7.2rem;
-      padding: 1.6rem 3.2rem;
-      justify-content: center;
-      align-items: center;
-      border-radius: 1.2rem;
-      background: var(--color-light);
       color: #6C65FC;
-      text-align: center;
-      font-size: 2.4rem;
-      font-weight: 500;
-      line-height: 130%;
-      letter-spacing: -0.048rem;
+      background: var(--color-light);
     }
   }
 }
@@ -2794,6 +2862,21 @@ li {
   }
 }
 
+/* Что важно помнить */
+.remember {
+  margin-top: 0;
+  padding-top: 0.15rem;
+
+  .screen__h2-icon {
+    transform: translateX(.5rem);
+    height: 20.8rem;
+  }
+
+  .why__wrap {
+    padding-bottom: 2.3rem;
+  }
+}
+
 .result {
   position: relative;
   z-index: 1;
@@ -2817,6 +2900,7 @@ li {
   }
 
   .result__plane {
+    margin-top: 3.4rem;
     width: 79rem;
     height: 12.6rem;
   }

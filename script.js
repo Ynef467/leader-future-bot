@@ -79,6 +79,102 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+  const tabsWrappers = document.querySelectorAll(".plan__tabs");
+
+  if (!tabsWrappers.length) {
+    console.error("[LPC Warning]: Табы не найдены на странице");
+    return;
+  }
+
+  tabsWrappers.forEach((wrapper) => {
+    const tabButtons = wrapper.querySelectorAll(".plan__tab-btn");
+    const tabPanels = wrapper.querySelectorAll(".plan__days");
+
+    if (!tabButtons.length || !tabPanels.length) {
+      console.error("[LPC Warning]: Кнопки или панели табов не найдены");
+      return;
+    }
+
+    // ===== ARIA roles =====
+    wrapper.setAttribute("role", "tablist");
+
+    tabButtons.forEach((btn, index) => {
+      const tabId = `tab-${index}-${Math.random().toString(36).slice(2, 7)}`;
+      const panel = wrapper.querySelector(`.plan__days[data-tab-id="${index + 1}"]`);
+
+      if (!panel) {
+        console.error(`[LPC Warning]: Панель для таба ${index + 1} не найдена`);
+        return;
+      }
+
+      const panelId = `panel-${index}-${Math.random().toString(36).slice(2, 7)}`;
+
+      // roles
+      btn.setAttribute("role", "tab");
+      panel.setAttribute("role", "tabpanel");
+
+      // ids
+      btn.id = tabId;
+      panel.id = panelId;
+
+      btn.setAttribute("aria-controls", panelId);
+      panel.setAttribute("aria-labelledby", tabId);
+
+      const isActive = btn.classList.contains("active");
+
+      btn.setAttribute("aria-selected", isActive);
+      btn.setAttribute("tabindex", isActive ? "-1" : "0");
+
+      panel.hidden = !isActive;
+    });
+
+    // ===== переключение =====
+    const activateTab = (clickedBtn) => {
+      tabButtons.forEach((btn, index) => {
+        const panel = wrapper.querySelector(`.plan__days[data-tab-id="${index + 1}"]`);
+
+        const isCurrent = btn === clickedBtn;
+
+        btn.classList.toggle("active", isCurrent);
+        btn.setAttribute("aria-selected", isCurrent);
+        btn.setAttribute("tabindex", isCurrent ? "-1" : "0");
+
+        if (panel) {
+          panel.hidden = !isCurrent;
+        }
+      });
+    };
+
+    // ===== events =====
+    tabButtons.forEach((btn) => {
+      // mouse
+      btn.addEventListener("click", () => activateTab(btn));
+
+      // keyboard accessibility
+      btn.addEventListener("keydown", (e) => {
+        const currentIndex = [...tabButtons].indexOf(btn);
+
+        let newIndex = null;
+
+        if (e.key === "ArrowRight") {
+          newIndex = (currentIndex + 1) % tabButtons.length;
+        }
+
+        if (e.key === "ArrowLeft") {
+          newIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+        }
+
+        if (newIndex !== null) {
+          e.preventDefault();
+          tabButtons[newIndex].focus();
+          activateTab(tabButtons[newIndex]);
+        }
+      });
+    });
+  });
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   const screens = document.querySelectorAll('.screen');
 
