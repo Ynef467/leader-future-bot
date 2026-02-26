@@ -2075,6 +2075,10 @@ li {
       gap: 3rem;
     }
 
+    .share__wrap.big {
+      padding-top: 0;
+    }
+
     .share__persona {
       img {
         width: 100%;
