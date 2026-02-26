@@ -2184,6 +2184,10 @@ li {
   .why__card.card-acent {
     background: var(--color-accent);
     color: var(--color-light);
+
+    .why__list li::before {
+      background: var(--color-light);
+    }
   }
 
   .why__list {
@@ -2218,6 +2222,12 @@ li {
     margin-top: -4.04rem;
     width: 92rem;
     transform: rotate(-1.5deg);
+  }
+
+  .why__card:nth-child(3) {
+    margin-top: -3rem;
+    width: 108rem;
+    transform: rotate(1.5deg);
   }
 
   .why__edge {
