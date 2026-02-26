@@ -2626,7 +2626,7 @@ li {
 
     .plan__days {
       margin-top: 6rem;
-      padding: 0;
+      padding: 0 0 12rem;
       gap: 1rem;
     }
 
@@ -2713,6 +2713,11 @@ li {
     align-self: stretch;
   }
 
+  .result__plane {
+    width: 79rem;
+    height: 12.6rem;
+  }
+
   .result__button {
     margin-top: 5.6rem;
     display: flex;
@@ -2741,6 +2746,39 @@ li {
     img {
       width: 91.2rem;
       height: 20.1rem;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .result {
+    height: 33rem;
+
+    .result__title {
+      font-size: 3.87rem;
+    }
+
+    .result__plane {
+      margin-top: 1rem;
+      width: 32.6rem;
+      height: 5.2rem;
+    }
+
+    .result__button {
+      margin-top: 3rem;
+      width: 27.2rem;
+      height: 5.5rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.036rem;
+    }
+
+    .result__collect {
+      padding-top: 5rem;
+
+      img {
+        width: 32.6rem;
+        height: 5.2rem;
+      }
     }
   }
 }
