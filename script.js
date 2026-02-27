@@ -34,6 +34,8 @@ window.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  const maxHeight = window.innerWidth > 1279 ? '21.2rem' : '20rem';
+
   accordions.forEach(accordion => {
     // Находим элементы внутри текущего аккордеона
     const arrow = accordion.querySelector('.plan__arrow svg');
@@ -45,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Изначально скрываем карточки
-    accordion.style.maxHeight = '21.2rem';
+    accordion.style.maxHeight = maxHeight;
 
     // Добавляем ARIA атрибуты для доступности
     accordion.setAttribute('aria-expanded', 'false');
@@ -66,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (isExpanded) {
         accordion.classList.remove('active');
         accordion.setAttribute('aria-expanded', 'false');
-        accordion.style.maxHeight = '21.2rem';
+        accordion.style.maxHeight = maxHeight;
       } else {
         accordion.classList.add('active');
         accordion.setAttribute('aria-expanded', 'true');

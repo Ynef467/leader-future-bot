@@ -181,7 +181,9 @@ li {
 }
 
 @media (max-width: 743px) {
-  .pc {
+
+  .pc,
+  ::-webkit-scrollbar {
     display: none !important;
   }
 
@@ -1966,6 +1968,7 @@ li {
     }
 
     .first-screen__title {
+      transform: translate(0);
       margin-top: 5.3rem;
       color: var(--color-accent);
       font-size: 7.5rem;
@@ -2323,10 +2326,6 @@ li {
       width: 100%;
     }
   }
-}
-
-#biohacking .why__wrap {
-  padding-bottom: 16rem;
 }
 
 @media (max-width: 1279px) {
@@ -2760,6 +2759,7 @@ li {
     border-radius: 1.2rem;
     font-size: 2.4rem;
     color: #736CFF;
+    background: none;
     cursor: pointer;
     border: none;
   }
@@ -2937,6 +2937,10 @@ li {
 }
 
 #biohacking {
+  .why__wrap {
+    padding-bottom: 16rem;
+  }
+
   .plan__h2 {
     padding-top: 14.3rem;
   }
@@ -2966,11 +2970,44 @@ li {
 }
 
 @media (max-width: 1279px) {
+  #biohacking .plan {
+    .plan__day-about {
+      flex-direction: row;
+      gap: .7rem;
+
+      img {
+        height: 3rem;
+      }
+    }
+
+    .plan__day-h3 {
+      line-height: 115%;
+      letter-spacing: -0.01rem;
+    }
+
+    .plan__day-download {
+      gap: 1.5rem;
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    .plan__day-text {
+      letter-spacing: -0.08rem;
+    }
+
+    .plan__days {
+      padding-bottom: 13.3rem;
+    }
+
+  }
+}
+
+@media (max-width: 1279px) {
   .plan {
     width: var(--width-global);
     padding: 0 2rem;
 
     .plan__h2 {
+      transform: translate(-.15rem, -.2rem);
       padding-top: 0;
       font-size: 3.87rem;
     }
@@ -3021,7 +3058,7 @@ li {
     .plan__cards {
       transform: translateY(0);
       margin-top: 1rem;
-      gap: 1rem;
+      gap: .5rem;
     }
 
     .plan__card {
@@ -3033,16 +3070,40 @@ li {
       letter-spacing: -0.032rem;
     }
 
+    .plan__tab {
+      height: 6.3rem;
+      width: 33.5rem;
+    }
+
+    .plan__tab-btn {
+      font-size: 1.8rem;
+    }
+
+    .plan__tab-btn.active {
+      color: var(--color-light);
+      background-color: var(--color-accent);
+    }
+
     .plan__days {
       margin-top: 6rem;
       padding: 0 0 12rem;
       gap: 1rem;
     }
 
+    .plan__tabs .plan__days {
+      margin-top: 3rem;
+      padding-bottom: 6rem;
+    }
+
+    .plan__text:first-child {
+      padding-top: .5rem;
+
+    }
+
     .plan__day {
       grid-template-columns: 1fr;
       padding: 2rem;
-      gap: 2rem;
+      gap: 1rem;
     }
 
     .plan__day-about {
@@ -3113,32 +3174,58 @@ li {
   height: 61.4rem;
   max-width: 144rem;
   margin: 0 auto;
+
+  .ai-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    position: absolute;
+    top: 6rem;
+    left: 12rem;
+    transform: rotate(-1.5deg);
+    padding: 4rem;
+    width: 57rem;
+    border-radius: 1.6rem;
+    background: var(--color-light);
+
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  .ai-card-2 {
+    top: 14.5rem;
+    left: auto;
+    right: 12rem;
+    transform: rotate(1.5deg);
+    width: 58rem;
+  }
 }
 
-.ai-card {
-  display: flex;
-  flex-direction: column;
-  gap: 2.2rem;
-  position: absolute;
-  top: 6rem;
-  left: 12rem;
-  transform: rotate(-1.5deg);
-  padding: 4rem;
-  width: 57rem;
-  border-radius: 1.6rem;
-  background: var(--color-light);
+@media (max-width: 1279px) {
+  .ai-cards {
+    height: 62rem;
 
-  font-size: 2.8rem;
-  font-weight: 400;
-  line-height: 130%;
-}
+    .ai-card {
+      gap: 2.4rem;
+      top: 5.6rem;
+      left: 0;
+      padding: 2rem;
+      width: 33.5rem;
+      font-size: 1.6rem;
+      line-height: 145%;
+      border-radius: 1.2rem;
+    }
 
-.ai-card-2 {
-  top: 14.5rem;
-  left: auto;
-  right: 12rem;
-  transform: rotate(1.5deg);
-  width: 58rem;
+    .ai-card-2 {
+      top: 31.6rem;
+    }
+
+    .plan__day-button {
+      height: 5.5rem;
+      font-size: 1.8rem;
+    }
+  }
 }
 
 /* Что важно помнить */
@@ -3153,6 +3240,21 @@ li {
 
   .why__wrap {
     padding-bottom: 2.3rem;
+  }
+}
+
+
+@media (max-width: 1279px) {
+  .remember {
+    .screen__h2-icon {
+      transform: translateX(0);
+      height: auto;
+      width: 26.8rem;
+    }
+
+    .why__card {
+      letter-spacing: -0.08rem;
+    }
   }
 }
 
@@ -3248,6 +3350,86 @@ li {
     height: 1.6rem;
     width: 100%;
     background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M13.3346%204L6.0013%2011.3333L2.66797%208%22%20stroke%3D%22%236C65FC%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+}
+
+
+@media (max-width: 1279px) {
+  #growth-mindset {
+    .plan__description {
+      margin: 6rem 0 1rem;
+      padding: 2rem;
+      border-radius: 1.6rem;
+      color: #6C65FC;
+      background-color: var(--color-light);
+      font-family: YS Display;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-align: start;
+    }
+
+    .plan__h2:not(:first-child) {
+      padding-top: 6rem;
+    }
+  }
+
+  .checklist {
+    margin-top: 4.3rem;
+    padding: 0 0 14.2rem;
+
+    .checklist__wrapper {
+      padding: 2rem;
+    }
+
+    .checklist__text,
+    .checklist__description {
+      font-family: YS Display;
+      font-size: 1.6rem;
+      line-height: 131%;
+      letter-spacing: -0.06rem;
+    }
+
+    .checklist__title {
+      font-size: 1.6rem;
+      letter-spacing: -0.032rem;
+    }
+
+    .checklist__divider {
+      margin: 2rem 0;
+    }
+
+    .checklist__blocks {
+      grid-template: auto / 1fr;
+      gap: .5rem;
+      margin-top: 2rem;
+    }
+
+    .checklist__block {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .checklist__download {
+      display: grid;
+      margin-top: 2rem;
+    }
+
+    .checklist__download .checklist__title {
+      font-size: 1.4rem;
+    }
+
+    .checklist__download .plan__day-button {
+      margin: 1rem 0 2rem;
+      height: 5.5rem;
+      width: 100%;
+      font-size: 1.8rem;
+    }
+
+    .checklist__download .checklist__text {
+      grid-row: 3;
+      margin: 0;
+      text-align: start;
+    }
   }
 }
 
@@ -3399,5 +3581,95 @@ li {
 
   .plan__day-download {
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  #self-skills {
+    .plan {
+      padding-bottom: 13.3rem;
+    }
+
+    .plan__day-about {
+      padding-bottom: 1rem;
+      gap: .75rem;
+
+      img {
+        height: 3rem;
+      }
+    }
+
+    .plan__accordion-text {
+      font-size: 1.4rem;
+      letter-spacing: -0.07rem;
+    }
+
+    .plan__cards {
+      margin-top: 2rem;
+    }
+
+    .plan__card {
+      grid-template: auto / 1fr;
+      gap: 1.3rem;
+      background: #EEF8F8;
+    }
+
+    .plan__card,
+    .plan__day-title {
+      font-size: 1.4rem;
+    }
+
+    .plan__accordion {
+      min-height: 30rem;
+    }
+
+    .plan__text-offset-top {
+      padding-top: 2rem;
+    }
+
+    .plan__text-offset-left {
+      padding-left: 1.7rem;
+    }
+
+    .plan__accordion-list {
+      padding-left: 1.8rem;
+    }
+
+    .plan__day-download.mob {
+      margin-top: 1.5rem;
+    }
+
+    .plan__day-download.mob .plan__day-text-content {
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
+
+    .plan__day-download.mob .plan__text:first-child {
+      padding-top: 1rem;
+    }
+
+    .plan__day-download.mob .plan__accordion-list {
+      gap: .3rem;
+      padding: 1.45rem 0 1rem 2rem;
+    }
+
+    .plan__day-download.mob .plan__day-button {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+
+@media (max-width: 1279px) {
+  #crisis-leadership {
+
+    .plan__day .plan__day-title,
+    .plan__day .plan__day-text-content .plan__day-title {
+      padding-bottom: 1.2rem;
+    }
+
+    .plan__day .plan__day-title {
+      font-size: 1.4rem;
+    }
   }
 }
