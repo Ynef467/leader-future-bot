@@ -2312,7 +2312,7 @@ li {
 
   .why__card:nth-child(3) {
     margin-top: -3rem;
-    width: 108rem;
+    max-width: 108rem;
     transform: rotate(1.5deg);
   }
 
@@ -2361,9 +2361,13 @@ li {
     }
 
     .why__card:nth-child(2) {
-      margin-top: 1rem;
+      margin-top: 0;
       width: 100%;
       transform: rotate(-1.5deg);
+    }
+
+    .why__card:nth-child(3) {
+      margin-top: 0;
     }
 
     .why__list li::before {
@@ -3005,6 +3009,10 @@ li {
       }
     }
 
+    .plan__h2 {
+      padding: 0;
+    }
+
     .plan__day-h3 {
       line-height: 115%;
       letter-spacing: -0.01rem;
@@ -3020,6 +3028,7 @@ li {
     }
 
     .plan__days {
+      margin-top: 6rem;
       padding-bottom: 13.3rem;
     }
 
@@ -3097,7 +3106,7 @@ li {
 
     .plan__tab {
       height: 6.3rem;
-      width: 33.5rem;
+      width: 100%;
     }
 
     .plan__tab-btn {
@@ -3687,14 +3696,30 @@ li {
 
 @media (max-width: 1279px) {
   #crisis-leadership {
+    .why__wrap {
+      padding-bottom: 6rem;
+    }
+
+    .plan__day-content {
+      gap: 1rem;
+    }
 
     .plan__day .plan__day-title,
     .plan__day .plan__day-text-content .plan__day-title {
       padding-bottom: 1.2rem;
+      letter-spacing: -.03rem;
     }
 
-    .plan__day .plan__day-title {
+    .plan__day-download .plan__day-title {
+      padding: 0;
       font-size: 1.4rem;
+      line-height: 130%;
+      letter-spacing: -0.028rem;
+    }
+
+    .plan__day-button {
+      height: 5.5rem;
+      font-size: 1.8rem;
     }
   }
 }
