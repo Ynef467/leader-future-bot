@@ -9,6 +9,9 @@ const makeAccessibleButton = (element, handler, options = {}) => {
   element.setAttribute('tabindex', '0');
 
   const onClick = (event) => {
+    const interactive = event.target.closest('button, a, input, select, textarea');
+    if (interactive && interactive !== element && element.contains(interactive)) return;
+
     event.preventDefault();
     handler(event);
   };
