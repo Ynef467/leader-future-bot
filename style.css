@@ -780,7 +780,7 @@ li {
   }
 
   .task-item {
-    opacity: 0.2;
+    opacity: 0.5;
     cursor: pointer;
     position: relative;
     margin: 0 3.7rem 0 5.9rem;
@@ -2300,13 +2300,13 @@ li {
   }
 
   .why__card:nth-child(1) {
-    width: 108rem;
+    max-width: 108rem;
     transform: rotate(1.5deg);
   }
 
   .why__card:nth-child(2) {
     margin-top: -4.04rem;
-    width: 92rem;
+    max-width: 92rem;
     transform: rotate(-1.5deg);
   }
 
@@ -2376,6 +2376,22 @@ li {
 
     .why__list li {
       padding-left: calc(1rem + var(--why-bullet-size) + 1rem);
+    }
+
+    .why__table {
+      margin-top: 1rem;
+      gap: 1rem;
+
+      .why__table-item {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+      }
+
+      .why__table-title {
+        font-family: var(--font-accent);
+        font-size: 3rem;
+        line-height: 110%;
+      }
     }
   }
 
@@ -2970,10 +2986,6 @@ li {
     padding-bottom: 16rem;
   }
 
-  .plan__h2 {
-    padding-top: 14.3rem;
-  }
-
   .plan__days {
     margin-top: 6.4rem;
     padding-bottom: 22.5rem;
@@ -3198,6 +3210,14 @@ li {
         height: 5.5rem;
         font-size: 1.8rem;
         letter-spacing: -0.036rem;
+      }
+    }
+
+    .plan__day-accordion {
+      position: relative;
+
+      .plan__day-important {
+        margin-top: 2rem;
       }
     }
   }
@@ -3720,6 +3740,28 @@ li {
     .plan__day-button {
       height: 5.5rem;
       font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  #effective-feedback {
+    .plan {
+
+      .plan__day-h3 {
+        padding-top: 0.5rem;
+      }
+
+      .plan__day-about {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        img {
+          width: 3.37rem;
+          height: 3.01rem;
+        }
+      }
     }
   }
 }
