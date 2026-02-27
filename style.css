@@ -2223,6 +2223,8 @@ li {
   }
 
   .why__wrap {
+    position: relative;
+    z-index: 2;
     margin-top: -2.4rem;
     display: flex;
     flex-direction: column;
@@ -2552,6 +2554,8 @@ li {
   }
 
   .plan__accordions {
+    position: relative;
+    z-index: 2;
     max-width: 144rem;
     margin: 0 auto;
     padding: 0 11.7rem;
@@ -2791,6 +2795,8 @@ li {
   }
 
   .plan__days {
+    position: relative;
+    z-index: 2;
     max-width: 144rem;
     margin: 0 auto;
     margin-top: 12rem;
@@ -3230,6 +3236,7 @@ li {
 
 .ai-cards {
   position: relative;
+  z-index: 2;
   height: 61.4rem;
   max-width: 144rem;
   margin: 0 auto;
@@ -3319,6 +3326,8 @@ li {
 
 /* Чеклист в "Мышление роста" */
 .checklist {
+  position: relative;
+  z-index: 2;
   max-width: 144rem;
   margin: 0 auto;
   margin-top: 6.4rem;
@@ -3495,8 +3504,46 @@ li {
   position: relative;
   z-index: 1;
   transform: translateY(-1px);
-  background: linear-gradient(173deg, #726BFF 89.03%, #FFF 117.26%), #726BFF;
+  background: linear-gradient(168deg, var(--color-accent) 52.81%, #FFF 173.54%);
   height: 62.4rem;
+
+  .result__light-tl,
+  .result__light-tr,
+  .result__light-bl,
+  .result__light-br {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .result__light-tl {
+    left: -75.8rem;
+    top: -84.1rem;
+    width: 118.5rem;
+    height: 81.4rem;
+  }
+
+  .result__light-tr {
+    right: -75.3rem;
+    top: -81.3rem;
+    width: 122.6rem;
+    height: 74.2rem;
+  }
+
+  .result__light-bl {
+    bottom: -80.3rem;
+    left: -48.5rem;
+    width: 104.8rem;
+    height: 99rem;
+  }
+
+  .result__light-br {
+    bottom: -75.9rem;
+    right: -51.9rem;
+    width: 104rem;
+    height: 100.1rem;
+  }
 
   .result__ready {
     display: flex;
