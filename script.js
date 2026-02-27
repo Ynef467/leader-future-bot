@@ -328,16 +328,30 @@ window.addEventListener('DOMContentLoaded', () => {
   const setTitleCount = (container, count) => {
     if (!container) return;
     const title = container.querySelector('.result__title');
-    if (!title) return;
-    title.textContent = `Суперсила ${Math.min(count, MAX_POINTS)}/${MAX_POINTS} ваша!`;
+    if (title) {
+      title.textContent = `Суперсила ${Math.min(count, MAX_POINTS)}/${MAX_POINTS} ваша!`;
+    }
+    if (count >= MAX_POINTS) {
+      const backBtn = container.querySelector('.result__button');
+      if (backBtn) {
+        backBtn.textContent = 'Завершить курс!';
+      }
+    }
   };
 
   const updateTitleByCount = (container) => {
     if (!container) return;
-    const title = container.querySelector('.result__title');
-    if (!title) return;
     const count = getCompletedCount();
-    title.textContent = `Суперсила ${Math.min(count, MAX_POINTS)}/${MAX_POINTS} ваша!`;
+    const title = container.querySelector('.result__title');
+    if (title) {
+      title.textContent = `Суперсила ${Math.min(count, MAX_POINTS)}/${MAX_POINTS} ваша!`;
+    }
+    if (count >= MAX_POINTS) {
+      const backBtn = container.querySelector('.result__button');
+      if (backBtn) {
+        backBtn.textContent = 'Завершить курс!';
+      }
+    }
   };
 
   const updatePlaneByCount = (container) => {
