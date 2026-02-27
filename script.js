@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Изначально скрываем карточки
-    cards.style.display = 'none';
+    accordion.style.maxHeight = '21.2rem';
 
     // Добавляем ARIA атрибуты для доступности
     accordion.setAttribute('aria-expanded', 'false');
@@ -66,11 +66,11 @@ window.addEventListener('DOMContentLoaded', () => {
       if (isExpanded) {
         accordion.classList.remove('active');
         accordion.setAttribute('aria-expanded', 'false');
-        cards.style.display = 'none';
+        accordion.style.maxHeight = '21.2rem';
       } else {
         accordion.classList.add('active');
         accordion.setAttribute('aria-expanded', 'true');
-        cards.style.display = 'flex';
+        accordion.style.maxHeight = 'unset';
       }
     };
 

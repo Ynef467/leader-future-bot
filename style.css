@@ -2814,31 +2814,33 @@ li {
   }
 }
 
-#biohacking .plan__h2 {
-  padding-top: 14.3rem;
-}
+#biohacking {
+  .plan__h2 {
+    padding-top: 14.3rem;
+  }
 
-#biohacking .plan__days {
-  margin-top: 6.4rem;
-  padding-bottom: 22.5rem;
-}
+  .plan__days {
+    margin-top: 6.4rem;
+    padding-bottom: 22.5rem;
+  }
 
-#biohacking .plan__day-download {
-  gap: 2.4rem;
-  background: #EBEAFF;
-}
+  .plan__day-download {
+    gap: 2.4rem;
+    background: #EBEAFF;
+  }
 
-#biohacking .plan__day-button {
-  color: var(--color-light);
-  background: #736CFF;
-}
+  .plan__day-button {
+    color: var(--color-light);
+    background: #736CFF;
+  }
 
-#biohacking .plan__day-warning {
-  background: #FFEAF3;
-}
+  .plan__day-warning {
+    background: #FFEAF3;
+  }
 
-#biohacking .plan__day-warning .plan__day-text {
-  color: #D55365;
+  .plan__day-warning .plan__day-text {
+    color: #D55365;
+  }
 }
 
 @media (max-width: 1279px) {
