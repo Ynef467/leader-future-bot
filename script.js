@@ -400,6 +400,7 @@ window.addEventListener('DOMContentLoaded', () => {
         setTaskItemCollected(taskId, true);
       }
       const newCount = getCompletedCount();
+      const lights = container.querySelectorAll('.result__light');
 
       if (typeof gsap !== 'undefined' && !reduceMotion) {
         renderPlane(prevCount, container);
@@ -415,7 +416,10 @@ window.addEventListener('DOMContentLoaded', () => {
             scale: 0.7
           });
           tl.add(() => { clone.setAttribute('hidden', 'true'); });
-          tl.add(() => { ready.removeAttribute('hidden'); });
+          tl.add(() => {
+            ready.removeAttribute('hidden');
+            lights.forEach(light => light.classList.add('active'));
+          });
           tl.to(ready, {
             duration: 0.45,
             ease: 'power2.out',
@@ -427,6 +431,7 @@ window.addEventListener('DOMContentLoaded', () => {
           clone.setAttribute('hidden', 'true');
           ready.removeAttribute('hidden');
           ready.style.opacity = '1';
+          lights.forEach(light => light.classList.add('active'));
         }
 
         const targetIndex = Math.min(newCount, MAX_POINTS);
@@ -436,23 +441,11 @@ window.addEventListener('DOMContentLoaded', () => {
             if (seg) {
               try {
                 setTitleCount(container, newCount);
-                const titleEl = container.querySelector('.result__title');
-                if (titleEl) {
-                  gsap.set(titleEl, { opacity: 0.6, scale: 0.95, transformOrigin: '50% 50%' });
-                }
                 const tl2 = gsap.timeline({
                   onComplete: () => {
                     updatePlaneByCount(container);
                   }
                 });
-                if (titleEl) {
-                  tl2.to(titleEl, {
-                    duration: 0.5,
-                    ease: 'power2.out',
-                    opacity: 1,
-                    scale: 1
-                  }, 0);
-                }
                 tl2.fromTo(
                   seg,
                   { opacity: 0.2 },
@@ -486,6 +479,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ready.removeAttribute('hidden');
         renderPlane(prevCount, container);
         clone.setAttribute('hidden', 'true');
+        lights.forEach(light => light.classList.add('active'));
         setTimeout(() => {
           updateTitleByCount(container);
           updatePlaneByCount(container);

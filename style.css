@@ -3540,6 +3540,15 @@ li {
   background: linear-gradient(168deg, var(--color-accent) 52.81%, #FFF 173.54%);
   height: 62.4rem;
 
+  .result__light path {
+    fill: rgba(225, 225, 225, 0.1);
+    transition: fill .5s ease-in;
+  }
+
+  .result__light.active path {
+    fill: #FECB1D;
+  }
+
   .result__light-tl,
   .result__light-tr,
   .result__light-bl,
