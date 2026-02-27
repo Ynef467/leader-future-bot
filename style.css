@@ -2934,6 +2934,31 @@ li {
       background: var(--color-light);
     }
   }
+
+  .plan__day-accordion {
+    position: relative;
+
+    .plan__day-accordion-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .plan__arrow {
+      position: static;
+    }
+
+    .plan__day-important {
+      margin-top: 3.2rem;
+    }
+  }
+
+  .plan__day-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
 }
 
 #biohacking {

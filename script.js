@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  const tabsWrappers = document.querySelectorAll(".plan__tabs");
+  const tabsWrappers = document.querySelectorAll(".plan__tabs, .plan__day-tabs");
 
   if (!tabsWrappers.length) {
     console.error("[LPC Warning]: Табы не найдены на странице");
@@ -91,7 +91,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   tabsWrappers.forEach((wrapper) => {
     const tabButtons = wrapper.querySelectorAll(".plan__tab-btn");
-    const tabPanels = wrapper.querySelectorAll(".plan__days");
+    const panelSelector = wrapper.classList.contains("plan__day-tabs")
+      ? ".plan__day-content"
+      : ".plan__days";
+    const tabPanels = wrapper.querySelectorAll(panelSelector);
 
     if (!tabButtons.length || !tabPanels.length) {
       console.error("[LPC Warning]: Кнопки или панели табов не найдены");
@@ -103,7 +106,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     tabButtons.forEach((btn, index) => {
       const tabId = `tab-${index}-${Math.random().toString(36).slice(2, 7)}`;
-      const panel = wrapper.querySelector(`.plan__days[data-tab-id="${index + 1}"]`);
+      const panel = wrapper.querySelector(`${panelSelector}[data-tab-id="${index + 1}"]`);
 
       if (!panel) {
         console.error(`[LPC Warning]: Панель для таба ${index + 1} не найдена`);
@@ -134,7 +137,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== переключение =====
     const activateTab = (clickedBtn) => {
       tabButtons.forEach((btn, index) => {
-        const panel = wrapper.querySelector(`.plan__days[data-tab-id="${index + 1}"]`);
+        const panel = wrapper.querySelector(`${panelSelector}[data-tab-id="${index + 1}"]`);
 
         const isCurrent = btn === clickedBtn;
 
@@ -792,4 +795,54 @@ window.addEventListener('DOMContentLoaded', () => {
   initInitialScreen();
   initStartButton();
   initBackButtons();
+});
+
+// Функциональность для plan__day-accordion
+window.addEventListener('DOMContentLoaded', () => {
+  const dayAccordions = document.querySelectorAll('.plan__day-accordion');
+
+  if (!dayAccordions.length) {
+    console.error('[LPC Warning]: Аккордеоны plan__day-accordion не найдены на странице');
+    return;
+  }
+
+  dayAccordions.forEach(accordion => {
+    const item = accordion.querySelector('.plan__day-accordion-item');
+    const content = accordion.querySelector('.plan__day-accordion-content');
+    const arrow = accordion.querySelector('.plan__arrow svg');
+
+    if (!item || !content) {
+      console.error('[LPC Warning]: Не найдены необходимые элементы в plan__day-accordion');
+      return;
+    }
+
+    // Изначально скрываем контент
+    content.hidden = true;
+
+    // Добавляем ARIA атрибуты для доступности
+    item.setAttribute('aria-expanded', 'false');
+    item.setAttribute('aria-controls', `day-content-${Math.random().toString(36).substr(2, 9)}`);
+    content.setAttribute('id', item.getAttribute('aria-controls'));
+    content.setAttribute('role', 'region');
+
+    const toggleDayAccordion = () => {
+      const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        item.setAttribute('aria-expanded', 'false');
+        content.hidden = true;
+        if (arrow) {
+          arrow.style.transform = 'rotate(0deg)';
+        }
+      } else {
+        item.setAttribute('aria-expanded', 'true');
+        content.hidden = false;
+        if (arrow) {
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      }
+    };
+
+    makeAccessibleButton(item, toggleDayAccordion);
+  });
 });
